@@ -1,229 +1,167 @@
-/* Main Styles for Lab 8 */
+/*
+ * CSS File for the solution
+ * Tutorial 09
+ *
+ *
+ * Photo by Carolina Castilla Arias:
+ * https://www.pexels.com/photoclose-up-photo-of-pokemon-pikachu-figurine-1716861/
+ */
 
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --background-color: #ecf0f1;
-    --text-color: #2c3e50;
-    --border-color: #bdc3c7;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --error-color: #e74c3c;
-}
+
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-}
+  color: #003049;
+  font-family: sans-serif;
+  background-color: #fdf0d5;
 
-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-}
+  background: url("./images/pica.jpg") center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    padding: 0;
-}
-
-nav li {
-    list-style: none;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover,
-nav a.current {
-    background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 500px;
+  min-width: 500px;
+  padding: 50px;
+  border-radius: 35px;
+  background-color: #f0f7c3;
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-section {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+main h1 {
+  font-size: 2rem;
 }
 
-h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
+main ul.poke-items {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
-h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
+main ul.poke-items li {
+  margin: 10px 0px 10px 0px;
+  border: 10px solid #003049;
+  padding: 20px;
+  border-radius: 20px;
+
+  background-color: #f4de52;
+  text-align: center;
+  font-size: 1.4rem;
 }
 
-#controls {
-    margin: 2rem 0;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+main ul.poke-items li:has(> a) {
+  text-align: left;
 }
 
-button {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+main ul.poke-items li a {
+  color: #003049;
+  text-decoration: none;
+  /* font-weight: 800; */
 }
 
-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-1px);
+main ul.poke-items li a:hover {
+  color: #002031;
+  text-decoration: underline;
 }
 
-button:active {
-    transform: translateY(0);
+/*
+ * ADD POKEMON FORM
+ */
+
+.add-pokemon {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 30px;
 }
 
-button:disabled {
-    background-color: var(--border-color);
-    cursor: not-allowed;
-    transform: none;
+.add-pokemon label {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
-#clear-data-btn {
-    background-color: var(--accent-color);
+input[type="text"] {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-#clear-data-btn:hover {
-    background-color: #c0392b;
+input[type="submit"] {
+  background-color: #003049;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  border-radius: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
-#loading {
-    background-color: var(--warning-color);
-    color: white;
-    padding: 1rem;
-    border-radius: 4px;
-    text-align: center;
-    margin: 1rem 0;
+/*
+ * CLICK BUTTON
+ */
+
+ main ul.poke-items li button {
+  background-color: #222;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 10px 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
 }
 
-#error {
-    background-color: var(--error-color);
-    color: white;
-    padding: 1rem;
-    border-radius: 4px;
-    margin: 1rem 0;
+main ul.poke-items li button:hover,
+main ul.poke-items li button:focus {
+  opacity: 0.75;
+  transform: translateY(-2px);
 }
 
-#data-container {
-    margin-top: 2rem;
+main ul.poke-items li button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
-#data-display {
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 1rem;
-    min-height: 100px;
-    max-height: 400px;
-    overflow-y: auto;
-}
 
-.data-item {
-    background-color: white;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.data-item:last-child {
-    margin-bottom: 0;
-}
-
-.data-item h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.data-item p {
-    margin-bottom: 0.5rem;
-}
-
-.data-item .meta {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    font-style: italic;
-}
-
-.hidden {
-    display: none;
-}
-
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    main {
-        padding: 1rem;
-    }
-    
-    section {
-        padding: 1.5rem;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    #controls {
-        flex-direction: column;
-    }
-    
-    button {
-        width: 100%;
-    }
+/*
+ * SCREEN READER UTILITY
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
