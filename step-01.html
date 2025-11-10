@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 01 - JavaScript Fetch Lab</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Step 01 - JavaScript Fetch Exercise</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="step-01.html" class="current">Step 01</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="fetch-demo">
+            <h2>Fetch API Demonstration</h2>
+            <p>This exercise demonstrates working with the Fetch API to retrieve and display data.</p>
+            
+            <div id="controls">
+                <button id="fetch-data-btn">Fetch Data</button>
+                <button id="clear-data-btn">Clear Data</button>
+            </div>
+            
+            <div id="loading" class="hidden">
+                <p>Loading data...</p>
+            </div>
+            
+            <div id="error" class="hidden">
+                <p class="error-message"></p>
+            </div>
+            
+            <div id="data-container">
+                <h3>Retrieved Data:</h3>
+                <div id="data-display"></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Lab 8 Exercise - Step 01</p>
+    </footer>
+    
+    <!-- Include the JavaScript file -->
+    <script src="script-01.js"></script>
+</body>
+</html>
